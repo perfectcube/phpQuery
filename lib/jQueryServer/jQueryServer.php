@@ -121,4 +121,3 @@ if($token === $access || !$use_token_access){
 else{
   echo 'You need to provide the correct access token to $_POST requests to jQueryServer(). Set a JQUERY_SERVER_ACCESS variable into your environment (.env file or .htaccess) and include the token value on every request (get, post or cookie) as the value for the key "jqaccess"';
 }
-?>
