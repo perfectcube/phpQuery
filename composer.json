@@ -7,7 +7,7 @@
     ],
     "autoload": {
         "files": [
-            "phpQuery/phpQuery.php"
+            "src/phpQuery/phpQuery.php"
         ]
     },
     "description": "A composer wrapper for the phpQuery fork found at https://github.com/perfectcube/phpQuery",
