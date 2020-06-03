@@ -12,7 +12,7 @@ Docs:
 /* ALL-IN-ONE-SECTION-START */
 set_include_path(get_include_path()
 	.':'.'/usr/lib/phpquery'
-	.':'.realpath(dirname(__FILE__).'/../src')
+	.':'.realpath(__DIR__.'/../src/phpQuery')
 );
 require_once('phpQuery.php');
 /* ALL-IN-ONE-SECTION-END */
