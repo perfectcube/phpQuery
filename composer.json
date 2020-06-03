@@ -1,0 +1,16 @@
+{
+    "authors": [
+        {
+            "email": "dan@perfectcu.be",
+            "name": "Dan Bryant"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "phpQuery/phpQuery.php"
+        ]
+    },
+    "description": "A composer wrapper for the phpQuery fork found at https://github.com/perfectcube/phpQuery",
+    "license": "MIT",
+    "name": "perfectcube/phpquery"
+}
