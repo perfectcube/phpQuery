@@ -104,5 +104,21 @@ class jQueryServer {
 //			: $this->json->decode($data);
 //	}
 }
-new jQueryServer($_POST['data']);
+
+// default to using token access unless it's been disabled in config
+$use_token_access = isset($jQueryServerConfig['useTokenAuth']) ? $jQueryServerConfig['useTokenAuth'] : true;
+// pull the local token access value
+$access = getenv('JQUERY_SERVER_ACCESS');
+if ($use_token_access !== false) {
+  // if the env var hasn't been set then lock the system with a random token value
+  if (empty($access)) { $access = md5(rand().microtime().rand()); }  
+}
+// pull the remote token access value
+$token = !empty($_REQUEST['jqaccess']) ? $_REQUEST['jqaccess'] : null;
+if($token === $access || !$use_token_access){
+  new jQueryServer($_POST['data']);
+}
+else{
+  echo 'You need to provide the correct access token to $_POST requests to jQueryServer(). Set a JQUERY_SERVER_ACCESS variable into your environment (.env file or .htaccess) and include the token value on every request (get, post or cookie) as the value for the key "jqaccess"';
+}
 ?>

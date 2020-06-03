@@ -15,4 +15,8 @@ $jQueryServerConfig = array();
 // $jQueryServerConfig['refererMustMatch'] = true;
 // dot '.' means $_SERVER['HTTP_HOST']
 // $jQueryServerConfig['allowedRefererHosts'] = array('.', 'my-other-host.com');
+
+// Restrict access without token
+// $jQueryServerConfig['useTokenAuth'] = false;
+
 ?>
